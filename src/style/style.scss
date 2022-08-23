@@ -1,0 +1,12 @@
+// Sass-kommentar
+// Sass-variabel
+$body-bg: lightgreen;
+
+// :root {
+// 	--body-bg: lightgreen;
+// }
+
+body {
+	background-color: $body-bg;
+	// background-color: var(--body-bg);
+}
