@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build-sass": "sass src\\style\\:dist\\",
-	"watch-sass": "nodemon --watch ./src/style/ -e scss --exec \"npm run build-sass\""
+	"watch-sass": "nodemon --watch ./src/style/ -e scss --exec \"npm run build-sass\"",
+	"copy-html-js": "cp src\\script.js src\\index.html dist\\",
+	"watch-html-js": "nodemon --watch src/ -e html,js --exec \"npm run copy-html-js\"",
+	"live": "cd dist && live-server"
   },
   "keywords": [],
   "author": "",
