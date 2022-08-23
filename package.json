@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-sass": "sass src\\style\\:dist\\"
+    "build-sass": "sass src\\style\\:dist\\",
+	"watch-sass": "nodemon --watch ./src/style/ -e scss --exec \"npm run build-sass\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
