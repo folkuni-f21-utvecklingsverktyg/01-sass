@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Sass-kommentar
 // Sass-variabel
 $body-bg: pink;
@@ -9,4 +11,82 @@ $body-bg: pink;
 body {
 	background-color: $body-bg;
 	// background-color: var(--body-bg);
+}
+/*
+Läs mer på MDN
+px		pixlar, absolut enhet
+em		Baseras på font-size för parent. I body är 1rem == 1em
+rem		1rem == 16px (kanske)
+%		Procent av värdet för egenskapen hos parent
+vh, vw	Viewport width, viewport height
+cm, mm	Absoluta enheter
+*/
+$btn-primary-bg: steelblue;
+
+@mixin button($bg: none) {
+	background: $bg;
+	font-size: 14px;
+	width: 10em;
+	padding: 0.3em 0em;
+	margin: 0em 0.5em;
+	border-radius: 15px;
+	border-color: $btn-primary-bg;
+
+	transition: 1s all;
+	cursor: pointer;
+
+	&:hover {
+		transform: scale(110%);
+	}
+}
+/*%button {
+	font-size: 14px;
+	width: 10em;
+	padding: 0.3em 0em;
+	margin: 0em 0.5em;
+	border-radius: 15px;
+	border-color: $btn-primary-bg;
+
+	transition: 1s transform;
+	cursor: pointer;
+	&:hover {
+		transform: scale(110%);
+	}
+}*/
+.cookie-container {
+	display: flex;
+	justify-content: center;
+}
+
+.call-to-action {
+	// @extend %button;
+	// background-color: $btn-primary-bg;
+	@include button($btn-primary-bg);
+
+	&:hover {
+		background: color.scale($btn-primary-bg, $lightness: 50%);
+	}
+}
+.ghost {
+	// @extend %button;
+	// background: none;
+	@include button();
+
+	// background-color: grey;
+	// color: beige;
+	// transition: ease-in 0.2s;
+
+	// &:hover {
+	// 	// padding: 20px;
+	// 	// margin: 90px;
+	// 	background-color: green;
+	// }
+
+	/*background: linear-gradient(to left, steelblue 50%, darkgray 50%) right;
+	background-size: 200% 100%;
+
+	&:hover {
+		transition: all 1s ease;
+		background-position: left;
+	}*/
 }
