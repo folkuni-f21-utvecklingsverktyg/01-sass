@@ -90,3 +90,24 @@ $btn-primary-bg: steelblue;
 		background-position: left;
 	}*/
 }
+
+@mixin center-items() {
+	display: grid;
+	place-items: center;
+}
+.dialog-container {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	left: 0px;
+	top: 0px;
+	// background-color: lightgray;
+	@include center-items();
+}
+.dialog {
+	// Hur lägga rutan i mitten av webbsidan?
+	// left: 0px;
+	// right: 0px;
+	background-color: darkgray;
+	padding: 4em;
+}
