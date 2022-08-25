@@ -1,5 +1,8 @@
+// General stuff and buttons
 @use 'sass:color';
+@use 'variables';
 @use 'dialog';
+
 
 // Sass-kommentar
 // Sass-variabel
@@ -22,7 +25,6 @@ rem		1rem == 16px (kanske)
 vh, vw	Viewport width, viewport height
 cm, mm	Absoluta enheter
 */
-$btn-primary-bg: steelblue;
 
 @mixin button($bg: none) {
 	background: $bg;
@@ -31,7 +33,7 @@ $btn-primary-bg: steelblue;
 	padding: 0.3em 0em;
 	margin: 0em 0.5em;
 	border-radius: 15px;
-	border-color: $btn-primary-bg;
+	border-color: variables.$btn-primary-bg;
 
 	transition: 1s all;
 	cursor: pointer;
@@ -62,10 +64,10 @@ $btn-primary-bg: steelblue;
 .call-to-action {
 	// @extend %button;
 	// background-color: $btn-primary-bg;
-	@include button($btn-primary-bg);
+	@include button(variables.$btn-primary-bg);
 
 	&:hover {
-		background: color.scale($btn-primary-bg, $lightness: 50%);
+		background: color.scale(variables.$btn-primary-bg, $lightness: 50%);
 	}
 }
 .ghost {

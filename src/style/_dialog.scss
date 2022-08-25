@@ -1,3 +1,6 @@
+// Dialog window.
+@use 'variables';
+
 @mixin center-items() {
 	display: grid;
 	place-items: center;
@@ -17,6 +20,6 @@
 	// Hur lägga rutan i mitten av webbsidan?
 	// left: 0px;
 	// right: 0px;
-	background-color: darkgray;
+	// background-color: $dialog-bg;
 	padding: 4em;
 }
